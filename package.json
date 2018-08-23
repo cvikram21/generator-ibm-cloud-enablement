@@ -1,4 +1,6 @@
 {
+  "name": "generator-vc-test",
+  "version": "1.2.1",
   "name": "generator-ibm-cloud-enablement",
   "version": "1.2.3",
   "description": "This generator adds IBM Cloud enablement to applications",

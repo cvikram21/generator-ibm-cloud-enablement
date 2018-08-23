@@ -7,8 +7,7 @@ template:
     - repo
     - build
 
-toolchain:
-  name: {{name}}
+toolchai
 
 services:
   # Github repos
@@ -47,8 +46,7 @@ services:
           CF_SPACE: "{{tag 'form.pipeline.parameters.dev-space'}}"
           CF_ORGANIZATION: "{{tag 'form.pipeline.parameters.dev-organization'}}"
           {{/has}}
-          REGION_ID: "{{tag 'form.pipeline.parameters.dev-region'}}"
-        execute: true
+          REGION_ID: "
 
   #Web IDE
   webide:
@@ -56,10 +54,8 @@ services:
 
 #Deployment
 form:
-  pipeline:
     schema:
       $ref: deploy.json
-    parameters:
       app-name: {{name}}
       dev-region: "{{tag 'region'}}"
       api-key: "{{tag 'api-key'}}"

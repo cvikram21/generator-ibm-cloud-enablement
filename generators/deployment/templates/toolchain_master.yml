@@ -12,9 +12,6 @@ toolchai
 services:
   # Github repos
   repo:
-    service_id: hostedgit
-    parameters:
-      repo_url: "{{tag '#zip_url'}}{{tag 'zip_url'}}{{tag '/zip_url'}}{{tag '^zip_url'}}{{tag 'repository'}}{{tag '/zip_url'}}"
       repo_name: "{{tag 'toolchain.name'}}"
       type: {{repoType}}
       has_issues: true
@@ -57,12 +54,6 @@ form:
     schema:
       $ref: deploy.json
       app-name: {{name}}
-      dev-region: "{{tag 'region'}}"
-      api-key: "{{tag 'api-key'}}"
-      {{#has deployment.type 'Kube'}}
-      chart-name: {{deployment.chartName}}
-      kube-cluster-name: {{deployment.kubeClusterName}}
-      cluster-namespace: {{deployment.kubeClusterNamespace}}
       image-pull-secret-name: "{{tag 'image-pull-secret-name'}}"
       image-registry-token: "{{tag 'image-registry-token'}}"
       registry-namespace: {{deployment.imageRegistryNamespace}}

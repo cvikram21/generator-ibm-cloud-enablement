@@ -24,8 +24,6 @@ services:
   # Pipelines
   build:
     service_id: pipeline
-    parameters:
-      services:
         - repo
       name: "{{tag 'name'}}"
       ui-pipeline: true
@@ -59,7 +57,7 @@ form:
   pipeline:
     schema:
       $ref: deploy.json
-      : "{{tag 'api-key'}}"
+    : "{{tag 'api-key'}}"
       {{#has deployment.type 'Kube'}}
       chart-name: {{deployment.chartName}}
       kube-cluster-name: {{deployment.kubeClusterName}}

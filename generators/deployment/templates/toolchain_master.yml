@@ -59,10 +59,7 @@ form:
   pipeline:
     schema:
       $ref: deploy.json
-    parameters:
-      app-name: {{name}}
-      dev-region: "{{tag 'region'}}"
-      api-key: "{{tag 'api-key'}}"
+    : "{{tag 'api-key'}}"
       {{#has deployment.type 'Kube'}}
       chart-name: {{deployment.chartName}}
       kube-cluster-name: {{deployment.kubeClusterName}}

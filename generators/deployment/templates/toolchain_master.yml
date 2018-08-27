@@ -24,6 +24,7 @@ services:
   # Pipelines
   build:
     service_id: pipeline
+    parameters:
       services:
         - repo
       name: "{{tag 'name'}}"
